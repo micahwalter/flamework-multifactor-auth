@@ -1,0 +1,27 @@
+{assign var="page_title" value="Enter your authorization code" nav_tab='signin'}
+{include file="inc_head.txt"}
+
+<div class="container">
+  {if $error_invalid}	<p class="alert alert-error">Invalid code.</p>{/if}
+
+
+  <form action="{$cfg.abs_root_url}signin/validate/" method="post" accept-encoding="UTF-8" class="form-horizontal">
+    {$crumb_key|crumb_input}
+    <input type="hidden" name="validate" value="1" />
+    <input type="hidden" name="redir" value="{$redir|escape}" />
+    <input type="hidden" name="email" value="{$email|escape}" />
+
+
+    <fieldset>
+          <div class="form-group">
+            <label for="code">Enter your code</label>
+            <input type="num" name="code" size="40" value="" class="form-control" />
+    </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Validate</button>
+    </div>
+  </form>
+</div>
+
+{include file="inc_foot.txt"}

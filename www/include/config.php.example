@@ -1,0 +1,10 @@
+<?php
+
+	$GLOBALS['cfg']['enable_feature_multifactor_auth'] = 0;
+
+	# Twilio
+
+	$GLOBALS['cfg']['twilio_account_sid'] = '';
+	$GLOBALS['cfg']['twilio_auth_token'] = '';
+
+	$GLOBALS['cfg']['twilio_number'] = "";
